@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator App Vanilla</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="calculator">
+      <header>
+        <h1>calc</h1>
+        <div class="theme-switch">
+          <span>THEME</span>
+          <div class="switch">
+            <div class="radio-labels">
+              <label for="option1" class="switch-label">1</label>
+              <label for="option2" class="switch-label">2</label>
+              <label for="option3" class="switch-label">3</label>
+            </div>
+            <div class="radio-buttons">
+              <input
+                type="radio"
+                id="option1"
+                name="switch"
+                class="switch-input"
+                checked
+              />
+              <input
+                type="radio"
+                id="option2"
+                name="switch"
+                class="switch-input"
+              />
+              <input
+                type="radio"
+                id="option3"
+                name="switch"
+                class="switch-input"
+              />
+              <div class="switch-selection"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="screen-container">
+        <div class="result">399,500</div>
+      </div>
+      <div class="btn-container">
+        <div class="row">
+          <button class="btn btn-primary">7</button>
+          <button class="btn btn-primary">8</button>
+          <button class="btn btn-primary">9</button>
+          <button class="btn btn-secondary">DEL</button>
+        </div>
+        <div class="row">
+          <button class="btn btn-primary">4</button>
+          <button class="btn btn-primary">5</button>
+          <button class="btn btn-primary">6</button>
+          <button class="btn btn-primary">+</button>
+        </div>
+        <div class="row">
+          <button class="btn btn-primary">1</button>
+          <button class="btn btn-primary">2</button>
+          <button class="btn btn-primary">3</button>
+          <button class="btn btn-primary">-</button>
+        </div>
+        <div class="row">
+          <button class="btn btn-primary">.</button>
+          <button class="btn btn-primary">0</button>
+          <button class="btn btn-primary">/</button>
+          <button class="btn btn-primary">x</button>
+        </div>
+        <div class="row">
+          <button class="btn btn-secondary">RESET</button>
+          <button class="btn btn-tertiary">=</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
