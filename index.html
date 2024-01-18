@@ -21,28 +21,31 @@
           <span>THEME</span>
           <div class="switch">
             <div class="radio-labels">
-              <label for="option1" class="switch-label">1</label>
-              <label for="option2" class="switch-label">2</label>
-              <label for="option3" class="switch-label">3</label>
+              <label for="dark" class="switch-label">1</label>
+              <label for="light" class="switch-label">2</label>
+              <label for="colorful" class="switch-label">3</label>
             </div>
             <div class="radio-buttons">
               <input
                 type="radio"
-                id="option1"
-                name="switch"
+                id="dark"
+                value="dark"
+                name="theme"
                 class="switch-input"
                 checked
               />
               <input
                 type="radio"
-                id="option2"
-                name="switch"
+                id="light"
+                value="light"
+                name="theme"
                 class="switch-input"
               />
               <input
                 type="radio"
-                id="option3"
-                name="switch"
+                id="colorful"
+                value="colorful"
+                name="theme"
                 class="switch-input"
               />
               <div class="switch-selection"></div>
@@ -50,39 +53,55 @@
           </div>
         </div>
       </header>
-      <div class="screen-container">
-        <div class="result">399,500</div>
-      </div>
-      <div class="btn-container">
-        <div class="row">
-          <button class="btn btn-primary">7</button>
-          <button class="btn btn-primary">8</button>
-          <button class="btn btn-primary">9</button>
-          <button class="btn btn-secondary">DEL</button>
-        </div>
-        <div class="row">
-          <button class="btn btn-primary">4</button>
-          <button class="btn btn-primary">5</button>
-          <button class="btn btn-primary">6</button>
-          <button class="btn btn-primary">+</button>
-        </div>
-        <div class="row">
-          <button class="btn btn-primary">1</button>
-          <button class="btn btn-primary">2</button>
-          <button class="btn btn-primary">3</button>
-          <button class="btn btn-primary">-</button>
-        </div>
-        <div class="row">
-          <button class="btn btn-primary">.</button>
-          <button class="btn btn-primary">0</button>
-          <button class="btn btn-primary">/</button>
-          <button class="btn btn-primary">x</button>
-        </div>
-        <div class="row">
-          <button class="btn btn-secondary">RESET</button>
-          <button class="btn btn-tertiary">=</button>
-        </div>
-      </div>
+      <main>
+        <section class="screen-container">
+          <div class="result">0</div>
+        </section>
+        <section class="btn-container">
+          <div class="row">
+            <button class="btn btn-primary">7</button>
+            <button class="btn btn-primary">8</button>
+            <button class="btn btn-primary">9</button>
+            <button class="btn btn-secondary">DEL</button>
+          </div>
+          <div class="row">
+            <button class="btn btn-primary">4</button>
+            <button class="btn btn-primary">5</button>
+            <button class="btn btn-primary">6</button>
+            <button class="btn btn-primary">+</button>
+          </div>
+          <div class="row">
+            <button class="btn btn-primary">1</button>
+            <button class="btn btn-primary">2</button>
+            <button class="btn btn-primary">3</button>
+            <button class="btn btn-primary">-</button>
+          </div>
+          <div class="row">
+            <button class="btn btn-primary">.</button>
+            <button class="btn btn-primary">0</button>
+            <button class="btn btn-primary">/</button>
+            <button class="btn btn-primary">x</button>
+          </div>
+          <div class="row">
+            <button class="btn btn-secondary">RESET</button>
+            <button class="btn btn-tertiary">=</button>
+          </div>
+        </section>
+      </main>
     </div>
+    <footer>
+      <p>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Developed by
+        <a
+          href="https://www.frontendmentor.io/profile/yasserpulido"
+          target="_blank"
+          >Yasser Pulido</a
+        >
+      </p>
+    </footer>
+    <script src="js/app.js"></script>
   </body>
 </html>

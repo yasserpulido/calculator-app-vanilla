@@ -3,20 +3,74 @@
   --toggle-background-color: #232c43;
   --screen-background-color: #182034;
 
+  --key-primary-text-color: #444b5a;
   --key-primary-focus-color: #f9f6f2;
   --key-primary-background-color: #eae3dc;
   --key-primary-shadow-color: #b4a597;
 
+  --key-secondary-text-color: #ffffff;
   --key-secondary-focus-color: #7985aa;
   --key-secondary-background-color: #637097;
   --key-secondary-shadow-color: #404e72;
 
+  --key-tertiary-text-color: #ffffff;
   --key-tertiary-focus-color: #fd9589;
   --key-tertiary-background-color: #d03f2f;
   --key-tertiary-shadow-color: #93261a;
 
-  --text-primary-color: #ffffff;
-  --text-secondary-color: #444b5a;
+  --screen-text-color: #ffffff;
+  --header-text-color: #ffffff;
+}
+
+.light-theme {
+  --main-background-color: #e6e6e6;
+  --toggle-background-color: #d1cccc;
+  --screen-background-color: #ededed;
+
+  --key-primary-text-color: #35352c;
+  --key-primary-focus-color: #f2f1ed;
+  --key-primary-background-color: #e5e4e1;
+  --key-primary-shadow-color: #a69d91;
+
+  --key-secondary-text-color: #ffffff;
+  --key-secondary-focus-color: #5aa0a7;
+  --key-secondary-background-color: #377f86;
+  --key-secondary-shadow-color: #1b5f65;
+
+  --key-tertiary-text-color: #ffffff;
+  --key-tertiary-focus-color: #e97f33;
+  --key-tertiary-background-color: #ca5502;
+  --key-tertiary-shadow-color: #893901;
+
+  --screen-text-color: #35352c;
+  --header-text-color: #35352c;
+}
+
+.colorful-theme {
+  --main-background-color: #160628;
+  --toggle-background-color: #1d0934;
+  --screen-background-color: #1d0934;
+
+  --key-primary-text-color: #ffe53d;
+  --key-primary-focus-color: #fd9589;
+  --key-primary-background-color: #341c4f;
+  --key-primary-shadow-color: #871c9c;
+
+  --key-secondary-text-color: #ffffff;
+  --key-secondary-focus-color: #f9f6f2;
+  --key-secondary-background-color: #58077d;
+  --key-secondary-shadow-color: #bc15f4;
+
+  --key-tertiary-text-color: #1b2428;
+  --key-tertiary-focus-color: #7985aa;
+  --key-tertiary-background-color: #00e0d1;
+  --key-tertiary-shadow-color: #6cf9f2;
+
+  --screen-text-color: #ffe53d;
+  --header-text-color: #ffe53d;
+
+  --text-primary-color: #ffe53d;
+  --text-secondary-color: #ffffff;
 }
 
 html {
@@ -28,7 +82,6 @@ body {
   font-family: "League Spartan", sans-serif;
   font-size: 16px;
   font-weight: 700;
-  color: var(--text-primary-color);
   min-height: 100%;
   box-sizing: border-box;
   display: flex;
@@ -39,10 +92,14 @@ body {
 .calculator {
   max-width: 400px;
   width: 100%;
+  margin: 3rem;
+}
+
+main {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 3rem;
 }
 
 header {
@@ -50,9 +107,12 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 110%;
+  position: relative;
+  right: 1.2rem;
 }
 
-h1 {
+header h1 {
+  color: var(--header-text-color);
   font-size: 1.5rem;
 }
 
@@ -62,6 +122,7 @@ h1 {
 }
 
 .theme-switch span {
+  color: var(--header-text-color);
   font-size: 0.6rem;
   letter-spacing: 2px;
   margin-bottom: 0.2rem;
@@ -86,7 +147,12 @@ input {
 }
 
 .switch-input {
-  display: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio-labels {
+  color: var(--header-text-color);
 }
 
 .radio-labels,
@@ -103,32 +169,28 @@ input {
   width: 100%;
 }
 
-.switch-label {
-  cursor: pointer;
-}
-
 .switch-selection {
   position: absolute;
   z-index: 1;
   width: 14px;
   height: 14px;
   border-radius: 15px;
-  background: #f39c12;
+  background-color: #f39c12;
   transition: left 0.25s ease-in-out;
 }
 
-#option1:checked ~ .switch-selection {
+#dark:checked ~ .switch-selection {
   left: calc(0% + 3px);
 }
-#option2:checked ~ .switch-selection {
+#light:checked ~ .switch-selection {
   left: calc(50% - 9px);
 }
-#option3:checked ~ .switch-selection {
+#colorful:checked ~ .switch-selection {
   left: calc(100% - 17px);
 }
 
 .screen-container {
-  background-color: #182034;
+  background-color: var(--screen-background-color);
   border-radius: 10px;
   height: 60px;
   width: 100%;
@@ -141,7 +203,7 @@ input {
 }
 
 .result {
-  color: var(--text-primary-color);
+  color: var(--screen-text-color);
   font-size: 2.5rem;
   font-weight: 400;
   text-align: right;
@@ -181,38 +243,38 @@ input {
 .btn-primary {
   background-color: var(--key-primary-background-color);
   border-bottom: 4px solid var(--key-primary-shadow-color);
-  color: var(--text-secondary-color);
+  color: var(--key-primary-text-color);
 }
 
 .btn-primary:hover {
   background-color: var(--key-primary-focus-color);
   border-bottom: 4px solid var(--key-primary-shadow-color);
-  color: var(--text-secondary-color);
+  color: var(--key-primary-text-color);
 }
 
 .btn-secondary {
   background-color: var(--key-secondary-background-color);
   border-bottom: 4px solid var(--key-secondary-shadow-color);
-  color: var(--text-primary-color);
+  color: var(--key-secondary-text-color);
   font-size: 1.25rem;
 }
 
 .btn-secondary:hover {
   background-color: var(--key-secondary-focus-color);
   border-bottom: 4px solid var(--key-secondary-shadow-color);
-  color: var(--text-primary-color);
+  color: var(--key-secondary-text-color);
 }
 
 .btn-tertiary {
   background-color: var(--key-tertiary-background-color);
   border-bottom: 4px solid var(--key-tertiary-shadow-color);
-  color: var(--text-primary-color);
+  color: var(--key-tertiary-text-color);
 }
 
 .btn-tertiary:hover {
   background-color: var(--key-tertiary-focus-color);
   border-bottom: 4px solid var(--key-tertiary-shadow-color);
-  color: var(--text-primary-color);
+  color: var(--key-tertiary-text-color);
 }
 
 .btn:last-child {
@@ -224,7 +286,14 @@ input {
 }
 
 footer {
+  color: var(--header-text-color);
   margin-top: auto;
   text-align: center;
-  padding: 1rem;
+  font-size: 0.8rem;
+  padding: 1.5rem 0;
+}
+
+footer a {
+  color: var(--key-tertiary-background-color);
+  text-decoration: none;
 }
