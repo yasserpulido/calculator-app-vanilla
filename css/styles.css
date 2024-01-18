@@ -85,14 +85,14 @@ body {
   min-height: 100%;
   box-sizing: border-box;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  padding: 1rem 3rem;
 }
 
 .calculator {
   max-width: 400px;
   width: 100%;
-  margin: 3rem;
+  margin: auto;
 }
 
 main {
